@@ -146,7 +146,8 @@ class _AboutPageState extends State<AboutPage> {
                           children: [
                             TextButton(
                               onPressed: () {
-                                launch('https://github.com/suryanarayanms');
+                                launch(
+                                    'https://github.com/suryanarayanms/Tamil-Meme-Templates');
                               },
                               child: Center(
                                 child: Row(
