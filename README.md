@@ -25,3 +25,15 @@
 <img alt="Templates Page" src="https://www.linkpicture.com/q/20220430_200513.jpg" width="20%"> <img alt="Collection Page" src="https://www.linkpicture.com/q/20220430_200442.jpg" width="20%"> <img alt="Template Download" src="https://www.linkpicture.com/q/20220430_201326.jpg" width="20%"> 
   <div><img alt="Frames Page" src="https://www.linkpicture.com/q/20220430_200606.jpg" width="20%">
  
+
+## LICENSE
+```
+Copyright © 2022, Surya M S
+Tamil Meme Templates is free software licensed under GPL v3.0.
+You can redistribute and/or modify it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+Tamil Meme Templates is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+```
+[View License](https://github.com/suryanarayanms/Tamil-Meme-Templates/blob/master/LICENSE)
