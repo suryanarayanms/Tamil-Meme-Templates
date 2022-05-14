@@ -24,9 +24,10 @@
 - Download a movie frame. Set it as your Insta/Whatsapp profile pic.
 
 # UI
-<img alt="Templates Page" src="https://www.linkpicture.com/q/20220430_200513.jpg" width="20%"> <img alt="Collection Page" src="https://www.linkpicture.com/q/20220430_200442.jpg" width="20%"> <img alt="Template Download" src="https://www.linkpicture.com/q/20220430_201326.jpg" width="20%"> 
-  <div><img alt="Frames Page" src="https://www.linkpicture.com/q/20220430_200606.jpg" width="20%">
- 
+
+<img alt="Templates Page" src="https://user-images.githubusercontent.com/88872217/168428043-09842307-4606-4024-b506-4ffdbf52378b.jpg" width="20%"> <img alt="Templates Page" src="https://user-images.githubusercontent.com/88872217/168428064-0c6d9f90-4699-42e0-9e16-ea03bcda5b92.jpg" width="20%"> <img alt="Templates Download Page" src="https://user-images.githubusercontent.com/88872217/168428056-275540ce-5af8-4a5e-9881-816243cf7091.jpg" width="20%">
+<br>
+<img alt="Frames Page" src="https://user-images.githubusercontent.com/88872217/168428051-9aedfc4f-a154-4c82-9af4-3ae21b1cfdc8.jpg" width="20%"> <img alt="Frames Page" src="https://user-images.githubusercontent.com/88872217/168428046-968b040e-fc3b-48a9-b8dd-7b113a16ba73.jpg" width="20%"> <img alt="Frames Download Page" src="https://user-images.githubusercontent.com/88872217/168428049-62cb283a-7176-4a63-8926-24785e0b5104.jpg" width="20%">  
 
 ## LICENSE
 ```
