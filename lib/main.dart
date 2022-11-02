@@ -232,6 +232,7 @@ class _HomePageState extends State<HomePage> {
         drawerEdgeDragWidth: 125,
         endDrawerEnableOpenDragGesture: true,
         body: WillPopScope(
+          //pop scope
           onWillPop: () async {
             final difference = DateTime.now().difference(timeBackPressed);
             final isExitWarning = difference >= const Duration(seconds: 3);
