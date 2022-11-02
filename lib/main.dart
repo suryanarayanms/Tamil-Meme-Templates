@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:delayed_display/delayed_display.dart';
@@ -19,7 +19,7 @@ import 'package:shimmer/shimmer.dart';
 import 'package:tmq/widgets/navigation_drawer_widget.dart';
 
 import 'Main Pages/Templates/Sub Templates/templates.dart';
-import 'Main Pages/Templates/Sub Templates/trending_templates_download.dart';
+// import 'Main Pages/Templates/Sub Templates/trending_templates_download.dart';
 
 const AndroidNotificationChannel channel = AndroidNotificationChannel(
     'high_importance_channel', 'High Importance Notifications',
@@ -303,7 +303,7 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20)),
                       elevation: 0,
                       floating: _floating,
-                      expandedHeight: 80,
+                      expandedHeight: 95,
                       flexibleSpace: const FlexibleSpaceBar(
                         title: Padding(
                           padding: EdgeInsets.only(top: 30, bottom: 4),
@@ -311,106 +311,97 @@ class _HomePageState extends State<HomePage> {
                       ),
                       backgroundColor: const Color(0xFF7B61FF),
                     ),
-                    SliverToBoxAdapter(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0, bottom: 15),
-                        child: Column(children: [
-                          StreamBuilder(
-                            stream: slide.snapshots(),
-                            builder:
-                                (_, AsyncSnapshot<QuerySnapshot> snapshot) {
-                              if (snapshot.hasData) {
-                                return CarouselSlider.builder(
-                                  itemBuilder: (context, index, realIndex) {
-                                    dynamic doc =
-                                        snapshot.data?.docs[index].data();
-                                    return GestureDetector(
-                                      onTap: () {
-                                        String trendingtemplate =
-                                            doc['imageurl'];
-                                        String ttempname = doc['name'];
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                TTemplateDownlaod(
-                                                    trendingTemplate:
-                                                        trendingtemplate,
-                                                    tTname: ttempname),
-                                          ),
-                                        );
-                                      },
-                                      child: DelayedDisplay(
-                                        delay:
-                                            const Duration(milliseconds: 300),
-                                        fadeIn: true,
-                                        slidingBeginOffset: const Offset(0, 0),
-                                        child: Container(
-                                            margin: const EdgeInsets.all(8),
-                                            decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(20),
-                                              image: DecorationImage(
-                                                  image:
-                                                      CachedNetworkImageProvider(
-                                                    doc['imageurl'],
-                                                  ),
-                                                  onError:
-                                                      (exception, stackTrace) {
-                                                    FirebaseFirestore.instance
-                                                        .collection(
-                                                            "trending_templates")
-                                                        .doc(doc['name'])
-                                                        .delete();
+                    // SliverToBoxAdapter(
+                    //   child: Padding(
+                    //     padding: const EdgeInsets.only(top: 15.0, bottom: 15),
+                    //     child: Column(children: [
+                    //       StreamBuilder(
+                    //         stream: slide.snapshots(),
+                    //         builder:
+                    //             (_, AsyncSnapshot<QuerySnapshot> snapshot) {
+                    //           if (snapshot.hasData) {
+                    //             return CarouselSlider.builder(
+                    //               itemBuilder: (context, index, realIndex) {
+                    //                 dynamic doc =
+                    //                     snapshot.data?.docs[index].data();
+                    //                 return GestureDetector(
+                    //                   onTap: () {
+                    //                     String trendingtemplate =
+                    //                         doc['imageurl'];
+                    //                     String ttempname = doc['name'];
+                    //                     Navigator.push(
+                    //                       context,
+                    //                       MaterialPageRoute(
+                    //                         builder: (context) =>
+                    //                             TTemplateDownlaod(
+                    //                                 trendingTemplate:
+                    //                                     trendingtemplate,
+                    //                                 tTname: ttempname),
+                    //                       ),
+                    //                     );
+                    //                   },
+                    //                   child: DelayedDisplay(
+                    //                     delay:
+                    //                         const Duration(milliseconds: 300),
+                    //                     fadeIn: true,
+                    //                     slidingBeginOffset: const Offset(0, 0),
+                    //                     child: Container(
+                    //                         margin: const EdgeInsets.all(8),
+                    //                         decoration: BoxDecoration(
+                    //                           borderRadius:
+                    //                               BorderRadius.circular(20),
+                    //                           image: DecorationImage(
+                    //                               image:
+                    //                                   CachedNetworkImageProvider(
+                    //                                 doc['imageurl'],
+                    //                               ),
+                    //                               onError:
+                    //                                   (exception, stackTrace) {
+                    //                                 FirebaseFirestore.instance
+                    //                                     .collection(
+                    //                                         "trending_templates")
+                    //                                     .doc(doc['name'])
+                    //                                     .delete();
 
-                                                    // return print('object');
-                                                  },
-                                                  fit: BoxFit.cover),
-                                            )),
-                                      ),
-                                    );
-                                  },
-                                  options: CarouselOptions(
-                                    height: 180,
-                                    enlargeCenterPage: true,
-                                    autoPlay: true,
-                                    aspectRatio: 16 / 9,
-                                    autoPlayCurve: Curves.fastOutSlowIn,
-                                    enableInfiniteScroll: true,
-                                    autoPlayAnimationDuration:
-                                        const Duration(milliseconds: 800),
-                                    viewportFraction: 0.8,
-                                    scrollDirection: Axis.horizontal,
-                                  ),
-                                  itemCount: snapshot.data?.docs.length,
-                                );
-                              } else {
-                                return Center(
-                                  child: LoadingAnimationWidget.prograssiveDots(
-                                    size: 30,
-                                    color: Colors.white,
-                                  ),
-                                );
-                              }
-                            },
-                          ),
-                        ]),
-                      ),
-                    ),
+                    //                                 // return print('object');
+                    //                               },
+                    //                               fit: BoxFit.cover),
+                    //                         )),
+                    //                   ),
+                    //                 );
+                    //               },
+                    //               options: CarouselOptions(
+                    //                 height: 180,
+                    //                 enlargeCenterPage: true,
+                    //                 autoPlay: true,
+                    //                 aspectRatio: 16 / 9,
+                    //                 autoPlayCurve: Curves.fastOutSlowIn,
+                    //                 enableInfiniteScroll: true,
+                    //                 autoPlayAnimationDuration:
+                    //                     const Duration(milliseconds: 800),
+                    //                 viewportFraction: 0.8,
+                    //                 scrollDirection: Axis.horizontal,
+                    //               ),
+                    //               itemCount: snapshot.data?.docs.length,
+                    //             );
+                    //           } else {
+                    //             return Center(
+                    //               child: LoadingAnimationWidget.prograssiveDots(
+                    //                 size: 30,
+                    //                 color: Colors.white,
+                    //               ),
+                    //             );
+                    //           }
+                    //         },
+                    //       ),
+                    //     ]),
+                    //   ),
+                    // ),
                     SliverToBoxAdapter(
                         child: Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.white,
-                        borderRadius:
-                            const BorderRadius.all(Radius.circular(22)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black.withOpacity(0.4),
-                            spreadRadius: 7,
-                            blurRadius: 15,
-                            offset: const Offset(0, 2),
-                          )
-                        ],
+                        borderRadius: BorderRadius.all(Radius.circular(22)),
                       ),
                       child: StreamBuilder(
                         stream: ref.snapshots(),
